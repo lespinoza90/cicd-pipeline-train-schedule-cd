@@ -10,7 +10,7 @@ pipeline {
         }
         stage('DeployToStaging') {
             when {
-                branch 'master'
+                branch 'example-solution'
             }
             steps {
                 withCredentials([sshUserPrivateKey(credentialsId: 'ec2_key', keyFileVariable: 'private_key',  passphraseVariable:'', usernameVariable:'')]) {
